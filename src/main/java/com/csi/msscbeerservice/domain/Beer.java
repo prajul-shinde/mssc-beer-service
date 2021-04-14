@@ -22,14 +22,14 @@ public class Beer {
     @GenericGenerator(name = "UUID",strategy = "org.hibernate.id.UUIDGenerator")
     @Column(length = 36,columnDefinition = "varchar",updatable = false,nullable = false)
     private UUID id;
-    @Version
+    @Version //handled by hibernate
     private Long version;
 
-    @CreationTimestamp
+    @CreationTimestamp //handle by hibernate
     @Column(updatable = false)
     private Timestamp createdDate;
 
-    @UpdateTimestamp
+    @UpdateTimestamp //handle by hibernate
     private Timestamp lastModifiedDate;
     private String beerName;
     private String beerStyle;
